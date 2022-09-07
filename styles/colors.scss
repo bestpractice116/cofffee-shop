@@ -1,3 +1,9 @@
-$primary-color: #FBAC18;
+$primary-green: #8D9481;
+$primary-beige: #F0E7D8;
+$primary-navy: #1C3447;
+$primary-teal: #116769;
 
-:export { primary-color: $primary-color; }
+:export { primary-green: $primary-green; }
+:export { primary-beige: $primary-beige; }
+:export { primary-navy: $primary-navy; }
+:export { primary-teal: $primary-teal; }
