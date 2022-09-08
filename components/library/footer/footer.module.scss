@@ -1,0 +1,62 @@
+@import '../../../styles/colors.scss';
+
+.footerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  width: 100%;
+
+  .footerItems {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-top: 3px solid $primary-beige;
+    padding-top: 15px;
+
+    .brandItems {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: $primary-beige;
+      margin-left: 10px;
+      margin-right: 10px;
+
+      .logo {  
+        letter-spacing: -0.03em;
+        font-size: 28px;
+        font-weight: 700;
+      }
+
+      .socialContainer {
+        display: flex;
+        gap: 15px;
+
+        .socialIcon {
+          display: flex;
+          align-items: center;
+          
+          cursor: pointer;
+          color: $primary-beige;
+          font-size: 21px;
+        }
+      }
+    }
+
+    .storeItems {
+      display: flex;
+      align-items: flex-end;
+      gap: 50px;
+      color: $primary-beige;
+      margin-left: 10px;
+      margin-right: 10px;
+      font-size: 12px;
+
+      .locationItems {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

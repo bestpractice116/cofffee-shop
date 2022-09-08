@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from "../library/navBar";
+import Footer from "../library/footer";
 
 const styles = require("./layout.module.scss");
 
@@ -12,7 +13,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div className={styles.layoutContainer}>
       <NavBar />
       <main>{React.cloneElement(children)}</main>
-      <p>Footer</p>
+      <Footer />
     </div>
   );
 };

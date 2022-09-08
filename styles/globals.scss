@@ -17,3 +17,15 @@ a {
 * {
   box-sizing: border-box;
 }
+
+:root {
+  --shadow-color: 0deg 0% 0%;
+  --shadow-elevation:
+    0.1px 0.2px 0.2px hsl(var(--shadow-color) / 0.16),
+    0.4px 0.9px 0.9px -0.6px hsl(var(--shadow-color) / 0.14),
+    0.9px 1.9px 2px -1.2px hsl(var(--shadow-color) / 0.13),
+    1.7px 3.9px 4px -1.8px hsl(var(--shadow-color) / 0.11),
+    3.3px 7.3px 7.6px -2.5px hsl(var(--shadow-color) / 0.1),
+    5.8px 12.9px 13.4px -3.1px hsl(var(--shadow-color) / 0.08),
+    9.5px 21.2px 22px -3.7px hsl(var(--shadow-color) / 0.07);
+}
