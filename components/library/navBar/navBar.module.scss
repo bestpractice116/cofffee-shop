@@ -1,0 +1,62 @@
+@import '../../../styles/colors.scss';
+
+.navContainer {
+  position: fixed;
+
+  // Center container horizontally 
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 86vw;
+  padding: 5px 2vw 5px 2vw;
+  border-radius: 3px 3px 20px 20px;
+
+  background-color: $primary-navy;
+  
+  .logo {
+    color: $primary-beige;
+    letter-spacing: -0.03em;
+    font-size: 50px;
+    font-weight: 700;
+
+    // Keep middle (social icons) centered
+    flex: 1;
+    flex-basis: 0;
+  }
+
+  .socialIconsContainer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .socialIcon {
+      display: flex;
+      align-items: center;
+      
+      cursor: pointer;
+      color: $primary-beige;
+      font-size: 24px;
+    }
+  }
+
+  .navRoutesContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 25px;
+
+    // Keep middle (social icons) centered
+    flex: 1;
+    flex-basis: 0;
+
+    .navRoute {
+      cursor: pointer;
+      color: $primary-beige;
+      font-size: 18px;
+    }
+  }
+}

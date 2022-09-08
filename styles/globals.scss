@@ -1,11 +1,12 @@
-@import './colors.scss';
+@use './colors.scss';
 
 html,
 body {
-  background: $primary-green;
+  background: colors.$primary-green;
   padding: 0;
   margin: 0;
   font-family: 'Arimo', sans-serif;
+  letter-spacing: 0.05em;
 }
 
 a {
