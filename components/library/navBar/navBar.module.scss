@@ -2,6 +2,8 @@
 
 .navContainer {
   position: fixed;
+  top: 0px;
+  z-index: 888;
 
   // Center container horizontally 
   left: 50%;
@@ -16,6 +18,24 @@
   border-radius: 3px 3px 20px 20px;
 
   background-color: $primary-navy;
+
+  transition: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 400ms;
+
+  &Shadow {
+    @extend .navContainer;
+    opacity: 0.95;
+    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
+  &Hidden {
+    @extend .navContainer;
+    top: -60px;
+    opacity: 0;
+  }
   
   .logo {
     color: $primary-beige;

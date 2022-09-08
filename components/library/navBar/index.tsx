@@ -1,15 +1,50 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { debounce } from "../../../utils/helpers";
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
-import { IconType } from "react-icons";
 
 const styles = require("./navBar.module.scss");
 
 type NavBarProps = {};
 
 const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
+  // State to hide nav on scroll down and show on scroll up
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [scrollAtTop, setScrollAtTop] = useState(true);
+  const [showNav, setShowNav] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = debounce(() => {
+      const currentScrollPos = window.scrollY;
+      const scrollBuffer = 50;
+      const scrollMinDisplay = 5;
+
+      setShowNav(
+        // Show Nav if scroll up distance is larger than scroll buffer
+        (prevScrollPos > currentScrollPos &&
+          prevScrollPos - currentScrollPos > scrollBuffer) ||
+          // or within minDisplay range from the top of the page
+          currentScrollPos < scrollMinDisplay,
+      );
+      setScrollAtTop(currentScrollPos <= scrollBuffer);
+      setPrevScrollPos(currentScrollPos);
+    }, 100);
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos, showNav, scrollAtTop]);
+
   return (
-    <div className={styles.navContainer}>
+    <div
+      className={
+        showNav
+          ? scrollAtTop
+            ? styles.navContainer
+            : styles.navContainerShadow
+          : styles.navContainerHidden
+      }
+    >
       <span className={styles.logo}>COFFFEE</span>
       <div className={styles.socialIconsContainer}>
         <a
