@@ -1,4 +1,5 @@
 import React from "react";
+import NavBar from "../library/navBar";
 
 const styles = require("./layout.module.scss");
 
@@ -9,7 +10,7 @@ type LayoutProps = {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className={styles.layoutContainer}>
-      <p>Nav bar</p>
+      <NavBar />
       <main>{React.cloneElement(children)}</main>
       <p>Footer</p>
     </div>
