@@ -1,8 +1,11 @@
+$primary-white: #F8F8F8;
 $primary-green: #8D9481;
 $primary-beige: #F0E7D8;
 $primary-navy: #1C3447;
+$primary-grey: #1c344780;
 $primary-teal: #116769;
 
+:export { primary-green: $primary-white; }
 :export { primary-green: $primary-green; }
 :export { primary-beige: $primary-beige; }
 :export { primary-navy: $primary-navy; }

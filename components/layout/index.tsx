@@ -12,7 +12,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className={styles.layoutContainer}>
       <NavBar />
-      <main>{React.cloneElement(children)}</main>
+      <main className={styles.contentContainer}>
+        {React.cloneElement(children)}
+      </main>
       <Footer />
     </div>
   );

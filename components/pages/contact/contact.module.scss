@@ -1,0 +1,59 @@
+@import '../../../styles/colors.scss';
+
+.pageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.contactCardContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 60%;
+  background-color: $primary-beige;
+  border-radius: 20px;
+  padding: 50px;
+
+  .cardTextContainer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    
+   .cardTitleText {
+      color: $primary-navy;
+      font-weight: 700;
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .cardBodyText {
+      color: $primary-grey;
+      font-size: 14px;
+      margin: 0;
+    } 
+  }
+
+  .buttonContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    width: 40%;
+
+    .contactButton {
+      cursor: pointer;
+      background-color: $primary-teal;
+      border-radius: 25px;
+      padding: 20px;
+      width: 100%;
+      border-style: none;
+
+      color: $primary-white;
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+}

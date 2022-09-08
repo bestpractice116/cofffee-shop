@@ -45,7 +45,9 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
           : styles.navContainerHidden
       }
     >
-      <span className={styles.logo}>COFFFEE</span>
+      <Link href="/">
+        <a className={styles.logo}>COFFFEE</a>
+      </Link>
       <div className={styles.socialIconsContainer}>
         <a
           className={styles.socialIcon}
@@ -76,7 +78,9 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
         <span className={styles.navRoute}>menu</span>
         <span className={styles.navRoute}>about</span>
         <span className={styles.navRoute}>shop</span>
-        <span className={styles.navRoute}>contact</span>
+        <Link href="/contact">
+          <a className={styles.navRoute}>contact</a>
+        </Link>
       </div>
     </div>
   );
