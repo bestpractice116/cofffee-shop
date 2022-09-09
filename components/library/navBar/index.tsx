@@ -61,11 +61,13 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
           : styles.navContainerHidden
       }
     >
-      <Link href="/">
-        <a className={styles.logo} onClick={() => setSelected(0)}>
-          COFFFEE
-        </a>
-      </Link>
+      <div className={styles.logoContainer}>
+        <Link href="/">
+          <a className={styles.logo} onClick={() => setSelected(0)}>
+            COFFFEE
+          </a>
+        </Link>
+      </div>
       {/* Viewable on larger browsers */}
       <div className={styles.socialIconsContainer}>
         <a

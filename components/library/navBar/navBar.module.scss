@@ -39,23 +39,26 @@
     width: 90vw;
   }
 
-  .logo {
-    color: $primary-beige;
-    letter-spacing: -0.03em;
-    font-size: 50px;
-    font-weight: 700;
-
+  .logoContainer {
     // Keep middle (social icons) centered
     flex: 1;
     flex-basis: 0;
 
-    transition: all;
-    transition-duration: 400ms;
+    .logo {
+      color: $primary-beige;
+      letter-spacing: -0.03em;
+      font-size: 50px;
+      font-weight: 700;
 
-    @media only screen and (max-width: 768px) {
-      font-size: 38px;
+      transition: all;
+      transition-duration: 400ms;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 38px;
+      }
     }
   }
+  
 
   .socialIconsContainer {
     display: flex;
