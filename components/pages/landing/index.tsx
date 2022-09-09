@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+// Images
 import HeroImage from "../../../public/assets/cofffee-hero.jpeg";
 import CoffeeCupsImage from "../../../public/assets/cofffee-cups.jpeg";
+import ShopImage from "../../../public/assets/astro-shop.jpeg";
 
 const styles = require("./landing.module.scss");
 
@@ -21,7 +23,7 @@ const Landing: React.FC<LandingProps> = (props: LandingProps) => {
         />
       </div>
       <div className={styles.landingPageContainer}>
-        {/* TODO: break this into its own component */}
+        {/* About Card */}
         <div className={styles.aboutCardContainer}>
           <div className={styles.aboutImageContainer}>
             <Image
@@ -60,6 +62,22 @@ const Landing: React.FC<LandingProps> = (props: LandingProps) => {
                 when you step through those doors.
               </p>
             </div>
+          </div>
+        </div>
+
+        {/* Shop Card */}
+        <div className={styles.shopCardContainer}>
+          <div className={styles.imageContainer}>
+            <Link href={"/shop"}>
+              <a className={styles.imageColorOverlay} />
+            </Link>
+            <Image
+              src={ShopImage}
+              alt="Astronaut drinking coffee and working at a laptop"
+              layout="fill"
+              objectFit="cover"
+            />
+            <h1 className={styles.shopTitleText}>SHOP</h1>
           </div>
         </div>
       </div>
