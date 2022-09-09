@@ -122,3 +122,13 @@
   border-radius: 15px; 
   background: $primary-beige;
 }
+
+.menuContainer {
+  display: none;
+
+  @media only screen and (max-width: 992px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

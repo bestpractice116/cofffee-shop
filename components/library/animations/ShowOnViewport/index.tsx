@@ -1,14 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-type ShowOnScrollProps = {
+type ShowOnViewportProps = {
   children: React.ReactElement;
   duration?: number;
   delay?: number;
   customClass?: string;
 };
 
-const ShowOnScroll: React.FC<ShowOnScrollProps> = ({
+const ShowOnViewport: React.FC<ShowOnViewportProps> = ({
   children,
   duration = 1,
   delay = 0,
@@ -27,4 +27,4 @@ const ShowOnScroll: React.FC<ShowOnScrollProps> = ({
   );
 };
 
-export default ShowOnScroll;
+export default ShowOnViewport;

@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import ShowOnViewport from "../../library/animations/ShowOnViewport";
 
 const styles = require("./contact.module.scss");
 
@@ -7,7 +8,7 @@ type ContactProps = {};
 
 const Contact: React.FC<ContactProps> = (props: ContactProps) => {
   return (
-    <div className={styles.pageContainer}>
+    <ShowOnViewport customClass={styles.pageContainer}>
       <div className={styles.contactCardContainer}>
         <div className={styles.cardTextContainer}>
           <h1 className={styles.cardTitleText}>Trying to get in touch?</h1>
@@ -37,7 +38,7 @@ const Contact: React.FC<ContactProps> = (props: ContactProps) => {
           </a>
         </div>
       </div>
-    </div>
+    </ShowOnViewport>
   );
 };
 

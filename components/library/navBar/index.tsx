@@ -1,10 +1,10 @@
-import React, { useState, useEffect, Dispatch, SetStateAction } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
-import { FiMenu, FiX } from "react-icons/fi";
 import { motion, AnimateSharedLayout } from "framer-motion";
 import { debounce } from "../../../utils/helpers";
+import MenuToggle from "../animations/menuToggle";
 
 const styles = require("./navBar.module.scss");
 
@@ -22,6 +22,7 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
   ];
 
   // Nav Smaller Screen
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // State to hide nav on scroll down and show on scroll up
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -51,7 +52,7 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
   }, [prevScrollPos, showNav, scrollAtTop]);
 
   return (
-    <div
+    <nav
       className={
         showNav
           ? scrollAtTop
@@ -65,7 +66,6 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
           COFFFEE
         </a>
       </Link>
-
       {/* Viewable on larger browsers */}
       <div className={styles.socialIconsContainer}>
         <a
@@ -105,9 +105,12 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
           ))}
         </AnimateSharedLayout>
       </div>
-
       {/* Viewable on smaller browsers */}
-    </div>
+      <div className={styles.menuContainer}>
+        {/* TODO: add dropdown nav menu */}
+        <MenuToggle isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
+      </div>
+    </nav>
   );
 };
 
