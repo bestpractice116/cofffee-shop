@@ -4,15 +4,41 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   width: 100%;
+
+  transition: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 400ms;
+
+  @media only screen and (max-width: 992px) {
+    margin-bottom: 20px;
+  }
+
+  @media only screen and (max-width: 576px) {
+    margin-bottom: 15px;
+  }
 
   .footerItems {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
     border-top: 3px solid $primary-beige;
     padding-top: 15px;
+
+    transition: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 400ms;
+
+    @media only screen and (max-width: 992px) {
+      gap: 10px;
+    }
+
+    @media only screen and (max-width: 576px) {
+      border-top: 2px solid $primary-beige;
+      padding-top: 8px;
+      gap: 4px;
+    }
 
     .brandItems {
       display: flex;
@@ -20,12 +46,24 @@
       align-items: center;
       color: $primary-beige;
       margin-left: 10px;
-      margin-right: 10px;
+      margin-right: 10px; 
 
       .logo {  
         letter-spacing: -0.03em;
-        font-size: 28px;
+        font-size: 24px;
         font-weight: 700;
+
+        transition: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 400ms;
+
+        @media only screen and (max-width: 992px) {
+          font-size: 21px;
+        }
+
+        @media only screen and (max-width: 576px) {
+          font-size: 18px;
+        }
       }
 
       .socialContainer {
@@ -38,7 +76,19 @@
           
           cursor: pointer;
           color: $primary-beige;
-          font-size: 21px;
+          font-size: 18px;
+
+          transition: all;
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-duration: 400ms;
+
+          @media only screen and (max-width: 992px) {
+            font-size: 16px;
+          }
+
+          @media only screen and (max-width: 576px) {
+            font-size: 14px;
+          }
         }
       }
     }
@@ -50,11 +100,19 @@
       color: $primary-beige;
       margin-left: 10px;
       margin-right: 10px;
-      font-size: 12px;
+      font-size: 10px;
 
       .locationItems {
         display: flex;
         flex-direction: column;
+
+        transition: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 400ms;
+
+        @media only screen and (max-width: 992px) {
+          font-size: 8px;
+        }
       }
     }
   }

@@ -2,6 +2,7 @@ import React, { useState, useEffect, Dispatch, SetStateAction } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FiMenu, FiX } from "react-icons/fi";
 import { motion, AnimateSharedLayout } from "framer-motion";
 import { debounce } from "../../../utils/helpers";
 
@@ -10,7 +11,7 @@ const styles = require("./navBar.module.scss");
 type NavBarProps = {};
 
 const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
-  // Routes
+  // Nav Routes
   const { pathname } = useRouter();
   const [selected, setSelected] = useState(pathname === "/contact" ? 3 : 0);
   const navItems = [
@@ -19,6 +20,8 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
     { name: "shop", href: "/#shop" },
     { name: "contact", href: "/contact" },
   ];
+
+  // Nav Smaller Screen
 
   // State to hide nav on scroll down and show on scroll up
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -58,8 +61,12 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
       }
     >
       <Link href="/">
-        <a className={styles.logo}>COFFFEE</a>
+        <a className={styles.logo} onClick={() => setSelected(0)}>
+          COFFFEE
+        </a>
       </Link>
+
+      {/* Viewable on larger browsers */}
       <div className={styles.socialIconsContainer}>
         <a
           className={styles.socialIcon}
@@ -97,13 +104,9 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
             />
           ))}
         </AnimateSharedLayout>
-        {/* <span className={styles.navRoute}>menu</span>
-        <span className={styles.navRoute}>about</span>
-        <span className={styles.navRoute}>shop</span>
-        <Link href="/contact">
-          <a className={styles.navRoute}>contact</a>
-        </Link> */}
       </div>
+
+      {/* Viewable on smaller browsers */}
     </div>
   );
 };

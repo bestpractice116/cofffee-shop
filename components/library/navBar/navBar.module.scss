@@ -35,6 +35,10 @@
     opacity: 0;
   }
   
+  @media only screen and (max-width: 768px) {
+    width: 90vw;
+  }
+
   .logo {
     color: $primary-beige;
     letter-spacing: -0.03em;
@@ -44,6 +48,13 @@
     // Keep middle (social icons) centered
     flex: 1;
     flex-basis: 0;
+
+    transition: all;
+    transition-duration: 400ms;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 38px;
+    }
   }
 
   .socialIconsContainer {
@@ -58,6 +69,10 @@
       cursor: pointer;
       color: $primary-beige;
       font-size: 24px;
+
+      @media only screen and (max-width: 992px) {
+        display: none;
+      }
     }
   }
 
@@ -70,6 +85,17 @@
     // Keep middle (social icons) centered
     flex: 1;
     flex-basis: 0;
+
+    transition: all;
+    transition-duration: 400ms;
+    
+    @media only screen and (max-width: 1199px) {
+      gap:30px;
+    }
+
+    @media only screen and (max-width: 992px) {
+      display: none;
+    }
 
     .navRoute {
       cursor: pointer;
