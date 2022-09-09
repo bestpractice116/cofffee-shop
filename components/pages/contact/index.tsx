@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import ShowOnViewport from "../../library/animations/ShowOnViewport";
+import ShowOnViewport from "../../library/animations/showOnViewport";
 
 const styles = require("./contact.module.scss");
 
@@ -18,7 +18,11 @@ const Contact: React.FC<ContactProps> = (props: ContactProps) => {
           </p>
         </div>
         <div className={styles.buttonContainer}>
-          <a href={"https://twitter.com/augericke"}>
+          <a
+            href={"https://twitter.com/augericke"}
+            target="_blank"
+            rel="noreferrer"
+          >
             <motion.button
               className={styles.contactButton}
               whileHover={{ scale: 1.05 }}

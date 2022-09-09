@@ -8,7 +8,6 @@
   width: 100%;
 
   transition: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 400ms;
 
   @media only screen and (max-width: 992px) {
@@ -27,7 +26,6 @@
     padding-top: 15px;
 
     transition: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 400ms;
 
     @media only screen and (max-width: 992px) {
@@ -54,7 +52,6 @@
         font-weight: 700;
 
         transition: all;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 400ms;
 
         @media only screen and (max-width: 992px) {
@@ -79,7 +76,6 @@
           font-size: 18px;
 
           transition: all;
-          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
           transition-duration: 400ms;
 
           @media only screen and (max-width: 992px) {
@@ -107,7 +103,6 @@
         flex-direction: column;
 
         transition: all;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 400ms;
 
         @media only screen and (max-width: 992px) {

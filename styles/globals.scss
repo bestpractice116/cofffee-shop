@@ -1,6 +1,9 @@
 @use './colors.scss';
 
-html,
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: colors.$primary-green;
   padding: 0;
