@@ -65,7 +65,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 25px;
+    gap:40px;
 
     // Keep middle (social icons) centered
     flex: 1;
@@ -74,7 +74,25 @@
     .navRoute {
       cursor: pointer;
       color: $primary-beige;
-      font-size: 18px;
+      font-size: 16px;
     }
   }
+}
+
+.navItem {
+  cursor: pointer;
+  color: $primary-beige;
+  font-size: 16px;
+  position: relative;
+}
+
+.navUnderline {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin-top: 5px;
+  height: 2px;
+  border-radius: 15px; 
+  background: $primary-beige;
 }
