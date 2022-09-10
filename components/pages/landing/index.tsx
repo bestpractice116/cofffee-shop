@@ -25,7 +25,7 @@ const Landing: React.FC<LandingProps> = (props: LandingProps) => {
       <div className={styles.landingPageContainer}>
         {/* About Card */}
         <div className={styles.aboutCardContainer}>
-          <div className={styles.aboutImageContainer}>
+          <div className={styles.aboutImageContainer} id="about">
             <Image
               src={CoffeeCupsImage}
               alt="Coffee cups and beans floating in space"
@@ -34,7 +34,7 @@ const Landing: React.FC<LandingProps> = (props: LandingProps) => {
             />
             <h1 className={styles.aboutTitleText}>ABOUT</h1>
           </div>
-          <div className={styles.aboutTextContainer} id="about">
+          <div className={styles.aboutTextContainer}>
             <div className={styles.blockQuoteContainer}>
               <p className={styles.blockQuoteText}>
                 You, my dear reader, are about to embark on the most epic

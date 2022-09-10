@@ -13,11 +13,13 @@ type NavBarProps = {};
 const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
   // Nav Routes
   const { pathname } = useRouter();
-  const [selected, setSelected] = useState(pathname === "/contact" ? 3 : 0);
+  const [selected, setSelected] = useState(
+    pathname === "/contact" ? 3 : pathname === "/shop" ? 2 : 0,
+  );
   const navItems = [
     { name: "menu", href: "/#menu" },
     { name: "about", href: "/#about" },
-    { name: "shop", href: "/#shop" },
+    { name: "shop", href: "/shop" },
     { name: "contact", href: "/contact" },
   ];
 
@@ -96,16 +98,14 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
         </a>
       </div>
       <div className={styles.navRoutesContainer}>
-        <AnimateSharedLayout>
-          {navItems.map((item, key) => (
-            <NavItem
-              key={key}
-              item={item}
-              isSelected={selected === key}
-              onClick={() => setSelected(key)}
-            />
-          ))}
-        </AnimateSharedLayout>
+        {navItems.map((item, key) => (
+          <NavItem
+            key={key}
+            item={item}
+            isSelected={selected === key}
+            onClick={() => setSelected(key)}
+          />
+        ))}
       </div>
       {/* Viewable on smaller browsers */}
       <div className={styles.menuContainer}>
