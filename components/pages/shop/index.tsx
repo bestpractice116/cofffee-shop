@@ -54,8 +54,8 @@ const Shop: React.FC<ShopProps> = (props: ShopProps) => {
     <div className={styles.pageContainer}>
       <ShowOnViewport customClass={styles.shopInventoryContainer}>
         <>
-          {storeItems.map((product, key) => {
-            return <Item key={key} item={product} />;
+          {storeItems.map((product, index) => {
+            return <Item key={index} item={product} />;
           })}
         </>
       </ShowOnViewport>

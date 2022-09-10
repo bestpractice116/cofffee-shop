@@ -1,0 +1,198 @@
+@import '../../../styles/colors.scss';
+
+.menuContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60vw;
+  max-width: 1000px;
+  background-color: $primary-beige;
+  border-radius: 20px;
+  padding: 10px;
+  height: 900px;
+
+  @media only screen and (max-width: 1200px) {
+    width: 80vw;
+  }
+
+  @media only screen and (max-width: 992px) {
+    height: 850px;
+    padding: 5px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 90vw;
+  }
+
+  @media only screen and (max-width: 576px) {
+    height: 450px;
+  }
+
+  .titleContainer {
+    width: 95%;
+    transition: all;
+    transition-duration: 400ms;
+    margin-bottom: 30px;
+
+    @media only screen and (max-width: 992px) {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+
+    @media only screen and (max-width: 576px) {
+      width: 100%;
+      text-align: center;
+    }
+
+    .logo {
+      color: $primary-teal;
+      letter-spacing: -0.03em;
+      font-size: 54px;
+      font-weight: 700;
+      margin: 0;
+
+      transition: all;
+      transition-duration: 400ms;
+      
+      @media only screen and (max-width: 992px) {
+        font-size: 38px;
+      }
+    }
+
+    .tagline {
+      color: $primary-navy;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 11px;
+      margin: 0;
+
+      @media only screen and (max-width: 992px) {
+        font-size: 8px;
+      }
+    }
+  }
+
+  .menuListContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    height: 90%;
+    width: 100%;
+    overflow: scroll;
+    transition: all;
+    transition-duration: 400ms;
+
+    @media only screen and (max-width: 576px) {
+      flex-wrap: nowrap;
+    }
+
+    @media only screen and (max-width: 992px) {
+      height: 95%;
+    }
+
+    .categoryContainer {
+      width: 45%;
+      margin-bottom: 10px;
+      transition: all;
+      transition-duration: 400ms;
+
+      @media only screen and (max-width: 992px) {
+        width: 40%;
+      }
+
+      @media only screen and (max-width: 576px) {
+        width: 90%;
+      }
+
+      .categoryTitle {
+        color: $primary-beige;
+        background-color: $primary-navy;
+        border-radius: 10px;
+        text-align: center;
+        margin: 0;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+
+        transition: all;
+        transition-duration: 400ms;
+
+        @media only screen and (max-width: 992px) {
+          padding: 8px;
+          font-size: 14px;
+        }
+
+        &Green {
+          @extend .categoryTitle;
+          background-color: $primary-green;
+          color: $primary-navy;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .itemContainer {
+      display: flex;
+      justify-content: space-between;
+      width: 43%;
+      margin-bottom: 20px;
+
+      transition: all;
+      transition-duration: 400ms;
+
+      @media only screen and (max-width: 992px) {
+        width: 37%;
+      }
+
+      @media only screen and (max-width: 576px) {
+        width: 80%;
+      }
+
+      .itemTextContainer {
+        display: flex;
+        flex-direction: column;
+
+        .itemTitle {
+          font-style: italic;
+          color: $primary-navy;
+          font-size: 14px;
+
+          transition: all;
+          transition-duration: 400ms;
+
+          @media only screen and (max-width: 992px) {
+            font-size: 12px;
+          }
+        }
+
+        .itemDescription{
+          color: $primary-grey;
+          font-size: 12px;
+          width: 85%;
+          margin-top: 5px;
+
+          transition: all;
+          transition-duration: 400ms;
+
+          @media only screen and (max-width: 992px) {
+            font-size: 10px;
+          }
+        }
+      }
+
+      .itemPrice {
+        font-weight: 700;
+        color: $primary-navy;
+        font-size: 12px;
+
+        @media only screen and (max-width: 992px) {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}

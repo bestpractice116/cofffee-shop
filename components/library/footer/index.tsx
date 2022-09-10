@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const styles = require("./footer.module.scss");
@@ -10,7 +11,9 @@ const Footer: React.FC<FooterProps> = (props: FooterProps) => {
     <div className={styles.footerContainer}>
       <div className={styles.footerItems}>
         <div className={styles.brandItems}>
-          <span className={styles.logo}>COFFFEE</span>
+          <Link href="/">
+            <a className={styles.logo}>COFFFEE</a>
+          </Link>
           <div className={styles.socialContainer}>
             <a
               className={styles.socialIcon}

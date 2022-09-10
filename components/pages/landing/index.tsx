@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Menu from "../../library/menu";
 
 // Images
 import HeroImage from "../../../public/assets/cofffee-hero.jpeg";
@@ -20,9 +21,11 @@ const Landing: React.FC<LandingProps> = (props: LandingProps) => {
           alt="Coffee shop floating in space"
           layout="fill"
           objectFit="cover"
+          priority={true}
         />
       </div>
       <div className={styles.landingPageContainer}>
+        <Menu />
         {/* About Card */}
         <div className={styles.aboutCardContainer}>
           <div className={styles.aboutImageContainer} id="about">
