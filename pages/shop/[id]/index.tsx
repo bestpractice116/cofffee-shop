@@ -34,8 +34,17 @@ const ShopPage: NextPage = () => {
       );
 
       if (!isInvalidItemId && isLoading) {
-        setItemData(shopItems.find((item) => item.id === parseInt(id)));
-        setIsLoading(false);
+        const data = shopItems.find((item) => item.id === parseInt(id));
+        setItemData(data);
+
+        // Added a delay just to showcase the loading skelton
+        if (data) {
+          setInterval(function () {
+            setIsLoading(false);
+          }, 1000);
+        } else {
+          setIsLoading(false);
+        }
       }
     }
   }, [router.query, router.isReady, isLoading, itemData]);
