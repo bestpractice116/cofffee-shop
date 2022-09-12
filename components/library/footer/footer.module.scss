@@ -7,8 +7,7 @@
   margin-bottom: 25px;
   width: 100%;
 
-  transition: all;
-  transition-duration: 400ms;
+  transition: all  400ms;
 
   @media only screen and (max-width: 992px) {
     margin-bottom: 20px;
@@ -25,8 +24,7 @@
     border-top: 3px solid $primary-beige;
     padding-top: 15px;
 
-    transition: all;
-    transition-duration: 400ms;
+    transition: all 400ms;
 
     @media only screen and (max-width: 992px) {
       gap: 10px;
@@ -51,8 +49,7 @@
         font-size: 24px;
         font-weight: 700;
 
-        transition: all;
-        transition-duration: 400ms;
+        transition: all 400ms;
 
         @media only screen and (max-width: 992px) {
           font-size: 21px;
@@ -75,8 +72,7 @@
           color: $primary-beige;
           font-size: 18px;
 
-          transition: all;
-          transition-duration: 400ms;
+          transition: all 400ms;
 
           @media only screen and (max-width: 992px) {
             font-size: 16px;
@@ -102,8 +98,7 @@
         display: flex;
         flex-direction: column;
 
-        transition: all;
-        transition-duration: 400ms;
+        transition: all 400ms;
 
         @media only screen and (max-width: 992px) {
           font-size: 8px;

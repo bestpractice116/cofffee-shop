@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
-import { motion, AnimateSharedLayout } from "framer-motion";
+import { motion } from "framer-motion";
 import { debounce } from "../../../utils/helpers";
 import MenuToggle from "../animations/menuToggle";
 

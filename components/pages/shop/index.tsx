@@ -79,25 +79,27 @@ const Item: React.FC<ShopItem> = (props: ShopItem) => {
   const { item } = props;
 
   return (
-    <div className={styles.itemContainer}>
-      <div className={styles.imageContainer}>
-        <Link href={`/shop/${item.id}`}>
-          <a className={styles.imageColorOverlay} />
-        </Link>
-        <Image
-          src={item.image}
-          alt="Coffee cups and beans floating in space"
-          layout="fill"
-          objectFit="cover"
-        />
-      </div>
-      <div className={styles.textContainer}>
-        <div className={styles.titleContainer}>
-          <span className={styles.titleText}>{item.name}</span>
-          <span className={styles.titleText}>${item.price}</span>
+    <Link href={`/shop/${item.id}`}>
+      {/* <a> */}
+      <div className={styles.itemContainer}>
+        <div className={styles.imageContainer}>
+          <span className={styles.imageColorOverlay} />
+          <Image
+            src={item.image}
+            alt="Coffee cups and beans floating in space"
+            layout="fill"
+            objectFit="cover"
+          />
         </div>
-        <p className={styles.descriptionText}>{item.description}</p>
+        <div className={styles.textContainer}>
+          <div className={styles.titleContainer}>
+            <span className={styles.titleText}>{item.name}</span>
+            <span className={styles.titleText}>${item.price}</span>
+          </div>
+          <p className={styles.descriptionText}>{item.description}</p>
+        </div>
       </div>
-    </div>
+      {/* </a> */}
+    </Link>
   );
 };

@@ -60,8 +60,7 @@
         font-size: 64px;
         line-height: 42px;
 
-        transition: all;
-        transition-duration: 400ms;
+        transition: all 400ms;
 
         @media only screen and (max-width: 768px) {
           font-size: 52px;
@@ -160,8 +159,7 @@
         opacity: 30%;
         cursor: pointer;
 
-        transition: all;
-        transition-duration: 400ms;
+        transition: all 400ms;
         &:hover {
           opacity: 20%;
         }
@@ -179,8 +177,7 @@
         font-size: 84px;
         line-height: 58px;
 
-        transition: all;
-        transition-duration: 400ms;
+        transition: all 400ms;
 
         @media only screen and (max-width: 768px) {
           font-size: 74px;

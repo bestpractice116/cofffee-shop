@@ -19,8 +19,7 @@
 
   background-color: $primary-navy;
 
-  transition: all;
-  transition-duration: 400ms;
+  transition: all 400ms;
 
   &Shadow {
     @extend .navContainer;
@@ -49,8 +48,7 @@
       font-size: 50px;
       font-weight: 700;
 
-      transition: all;
-      transition-duration: 400ms;
+      transition: all 400ms;
 
       @media only screen and (max-width: 768px) {
         font-size: 38px;
@@ -88,8 +86,7 @@
     flex: 1;
     flex-basis: 0;
 
-    transition: all;
-    transition-duration: 400ms;
+    transition: all 400ms;
     
     @media only screen and (max-width: 1199px) {
       gap:30px;

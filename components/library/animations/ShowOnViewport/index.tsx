@@ -15,7 +15,7 @@ const ShowOnViewport: React.FC<ShowOnViewportProps> = ({
   customClass,
 }) => {
   return (
-    <motion.span
+    <motion.div
       initial={{ y: 0, opacity: 0 }}
       whileInView={{ y: [30, 0], opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -23,7 +23,7 @@ const ShowOnViewport: React.FC<ShowOnViewportProps> = ({
       className={customClass}
     >
       {children}
-    </motion.span>
+    </motion.div>
   );
 };
 

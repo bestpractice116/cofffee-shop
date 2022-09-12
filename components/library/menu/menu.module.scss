@@ -30,8 +30,7 @@
 
   .titleContainer {
     width: 95%;
-    transition: all;
-    transition-duration: 400ms;
+    transition: all 400ms;
     margin-bottom: 30px;
 
     @media only screen and (max-width: 992px) {
@@ -51,8 +50,7 @@
       font-weight: 700;
       margin: 0;
 
-      transition: all;
-      transition-duration: 400ms;
+      transition: all 400ms;
       
       @media only screen and (max-width: 992px) {
         font-size: 38px;
@@ -81,8 +79,7 @@
     height: 90%;
     width: 100%;
     overflow: scroll;
-    transition: all;
-    transition-duration: 400ms;
+    transition: all 400ms;
 
     @media only screen and (max-width: 576px) {
       flex-wrap: nowrap;
@@ -95,8 +92,7 @@
     .categoryContainer {
       width: 45%;
       margin-bottom: 10px;
-      transition: all;
-      transition-duration: 400ms;
+      transition: all 400ms;
 
       @media only screen and (max-width: 992px) {
         width: 40%;
@@ -118,8 +114,7 @@
         text-transform: uppercase;
         letter-spacing: 0.1em;
 
-        transition: all;
-        transition-duration: 400ms;
+        transition: all 400ms;
 
         @media only screen and (max-width: 992px) {
           padding: 8px;
@@ -141,8 +136,7 @@
       width: 43%;
       margin-bottom: 20px;
 
-      transition: all;
-      transition-duration: 400ms;
+      transition: all 400ms;
 
       @media only screen and (max-width: 992px) {
         width: 37%;
@@ -161,8 +155,7 @@
           color: $primary-navy;
           font-size: 14px;
 
-          transition: all;
-          transition-duration: 400ms;
+          transition: all 400ms;
 
           @media only screen and (max-width: 992px) {
             font-size: 12px;
@@ -175,8 +168,7 @@
           width: 85%;
           margin-top: 5px;
 
-          transition: all;
-          transition-duration: 400ms;
+          transition: all 400ms;
 
           @media only screen and (max-width: 992px) {
             font-size: 10px;

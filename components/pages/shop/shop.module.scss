@@ -20,21 +20,42 @@
   border-radius: 30px;
   padding: 45px;
   overflow-y: scroll;
+
+  @media only screen and (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .itemContainer {
-  height: 350px;
-  width: 250px;
+  height: 325px;
+  width: 225px;
   overflow-y: hidden;
+  cursor: pointer;
+  
+  @media only screen and (max-width: 992px) {
+    height: 300px;
+    width: 200px;
+  }
+
 
   .imageContainer {
     position: relative;
     z-index: 0;
-    height: 250px;
-    width: 250px;
+    height: 225px;
+    width: 225px;
+    
     border-radius: 30px;
     overflow-y: hidden;
     overflow-x: hidden;
+
+    @media only screen and (max-width: 992px) {
+      height: 200px;
+      width: 200px;
+    }
 
     .imageColorOverlay {
       position: absolute;
@@ -43,13 +64,8 @@
       width: 100%;
       background-color: $primary-green;
       opacity: 20%;
-      cursor: pointer;
 
-      transition: all;
-      transition-duration: 400ms;
-      &:hover {
-        opacity: 0%;
-      }
+      transition: all 400ms;
     }
   }
 
@@ -69,14 +85,28 @@
         font-size: 16px;
         text-transform: lowercase;
         color: $primary-navy;
+        transition: all 400ms;
+
+        @media only screen and (max-width: 992px) {
+          font-size: 15px;
+        }
       }
     }
 
     .descriptionText {
-      margin-top: 4px;
+      margin-top: 5px;
       color: $primary-grey;
       width: 80%;
       text-transform: lowercase;
+      transition: all 400ms;
+      font-size: 14px;
+
+      @media only screen and (max-width: 992px) {
+        margin-top: 8px;
+        width: 100%;
+      }
     }
   }
 }
+
+.itemContainer:hover .imageColorOverlay{ opacity: 0%; }
