@@ -27,7 +27,7 @@ const ShopPage: NextPage = () => {
         ) : isLoading ? (
           <ShopItemSkeleton />
         ) : itemData ? (
-          <ShopItemView />
+          <ShopItemView itemData={itemData} />
         ) : (
           <ErrorView />
         ),
@@ -43,14 +43,10 @@ const ShopPage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>COFFFEE | {itemData ? itemData.name : "Shop"}</title>
+        <title>COFFFEE | Shop</title>
         <meta
           name="description"
-          content={
-            itemData
-              ? itemData.description
-              : "The best gear that COFFFEE has to offer"
-          }
+          content="The best gear that COFFFEE has to offer"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

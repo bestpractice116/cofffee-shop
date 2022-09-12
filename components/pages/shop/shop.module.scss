@@ -49,8 +49,7 @@
     width: 225px;
     
     border-radius: 30px;
-    overflow-y: hidden;
-    overflow-x: hidden;
+    overflow: hidden;
 
     @media only screen and (max-width: 992px) {
       height: 200px;
@@ -96,7 +95,7 @@
     .descriptionText {
       margin-top: 5px;
       color: $primary-grey;
-      width: 80%;
+      width: 90%;
       text-transform: lowercase;
       transition: all 400ms;
       font-size: 14px;
