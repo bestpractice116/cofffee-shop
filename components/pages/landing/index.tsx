@@ -10,9 +10,9 @@ import ShopImage from "../../../public/assets/astro-shop.jpeg";
 
 const styles = require("./landing.module.scss");
 
-type LandingProps = {};
+type LandingViewProps = {};
 
-const Landing: React.FC<LandingProps> = (props: LandingProps) => {
+const LandingView: React.FC<LandingViewProps> = (props: LandingViewProps) => {
   return (
     <>
       <div className={styles.heroImageContainer}>
@@ -88,4 +88,4 @@ const Landing: React.FC<LandingProps> = (props: LandingProps) => {
   );
 };
 
-export default Landing;
+export default LandingView;

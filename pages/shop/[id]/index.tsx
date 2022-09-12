@@ -38,7 +38,7 @@ const ShopPage: NextPage = () => {
         setIsLoading(false);
       }
     }
-  }, [router.query, router.isReady, isLoading]);
+  }, [router.query, router.isReady, isLoading, itemData]);
 
   return (
     <>

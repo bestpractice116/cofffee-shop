@@ -6,9 +6,9 @@ import { ShopItem, shopItems } from "../../../utils/mockdb";
 
 const styles = require("./shop.module.scss");
 
-type ShopProps = {};
+type ShopViewProps = {};
 
-const Shop: React.FC<ShopProps> = (props: ShopProps) => {
+const ShopView: React.FC<ShopViewProps> = (props: ShopViewProps) => {
   return (
     <div className={styles.pageContainer}>
       <ShowOnViewport customClass={styles.shopInventoryContainer}>
@@ -22,7 +22,7 @@ const Shop: React.FC<ShopProps> = (props: ShopProps) => {
   );
 };
 
-export default Shop;
+export default ShopView;
 
 const Item: React.FC<ShopItem> = (props: ShopItem) => {
   const { id, image, name, price, description } = props;
