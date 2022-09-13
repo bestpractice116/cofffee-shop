@@ -42,16 +42,16 @@ const Footer: React.FC<FooterProps> = (props: FooterProps) => {
           </div>
         </div>
         <div className={styles.storeItems}>
-          <div className={styles.locationItems}>
-            <a
-              href="https://www.google.com/moon/"
-              target="_blank"
-              rel="noreferrer"
-            >
+          <a
+            href="https://www.google.com/moon/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div className={styles.locationItems}>
               <span>212 Crater Ln,</span>
               <span>Selene City Moon, 10101</span>
-            </a>
-          </div>
+            </div>
+          </a>
           <span>7:00 - 6:00pm daily</span>
         </div>
       </div>

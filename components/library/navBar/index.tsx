@@ -22,9 +22,34 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
     { name: "shop", href: "/shop" },
     { name: "contact", href: "/contact" },
   ];
+  const socialItems = [
+    { icon: <FaTwitter />, href: "https://twitter.com/augericke" },
+    { icon: <FaGithub />, href: "https://github.com/Augericke/cofffee-shop" },
+    {
+      icon: <FaLinkedin />,
+      href: "https://www.linkedin.com/in/austingericke/",
+    },
+  ];
 
   // Nav Smaller Screen
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const sidebar = {
+    open: (height = 1000) => ({
+      clipPath: "inset(0px)",
+      transition: {
+        delay: 0.2,
+        ease: [0.2, 0.65, 0.3, 0.9],
+      },
+    }),
+    closed: {
+      clipPath: `inset(0px 0px 500px 0px)`,
+      transition: {
+        delay: 0.2,
+        ease: [0.2, 0.65, 0.3, 0.9],
+      },
+    },
+  };
 
   // State to hide nav on scroll down and show on scroll up
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -72,30 +97,19 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
       </div>
       {/* Viewable on larger browsers */}
       <div className={styles.socialIconsContainer}>
-        <a
-          className={styles.socialIcon}
-          href="https://twitter.com/augericke"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FaTwitter />
-        </a>
-        <a
-          className={styles.socialIcon}
-          href="https://github.com/Augericke/cofffee-shop"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FaGithub />
-        </a>
-        <a
-          className={styles.socialIcon}
-          href="https://www.linkedin.com/in/austingericke/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FaLinkedin />
-        </a>
+        {socialItems.map((social, index) => {
+          return (
+            <a
+              key={index}
+              className={styles.socialIcon}
+              href={social.href}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {social.icon}
+            </a>
+          );
+        })}
       </div>
       <div className={styles.navRoutesContainer}>
         {navItems.map((item, key) => (
@@ -104,6 +118,7 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
             item={item}
             isSelected={selected === key}
             onClick={() => setSelected(key)}
+            layoutId="horizontal"
           />
         ))}
       </div>
@@ -111,6 +126,40 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
       <div className={styles.menuContainer}>
         {/* TODO: add dropdown nav menu */}
         <MenuToggle isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
+        <motion.div
+          className={styles.dropDownContainer}
+          variants={sidebar}
+          animate={isMenuOpen ? "open" : "closed"}
+        >
+          <div className={styles.dropdownItemContainer}>
+            <div className={styles.socialIconContainerSmall}>
+              {socialItems.map((social, index) => {
+                return (
+                  <a
+                    key={index}
+                    className={styles.socialIcon}
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {social.icon}
+                  </a>
+                );
+              })}
+            </div>
+            <div className={styles.navRoutesContainerSmall}>
+              {navItems.map((item, key) => (
+                <NavItem
+                  key={key}
+                  item={item}
+                  isSelected={selected === key}
+                  onClick={() => setSelected(key)}
+                  layoutId="vertical"
+                />
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </div>
     </nav>
   );
@@ -121,12 +170,13 @@ export default NavBar;
 type NavItemProps = {
   item: { name: string; href: string };
   isSelected: boolean;
-  onClick: any;
+  onClick: () => void;
+  layoutId: string;
 };
 
 // Initial approach taken from https://framermotionplayground.com/tutorial/underlined-menu
 const NavItem: React.FC<NavItemProps> = (props: NavItemProps) => {
-  const { item, isSelected, onClick } = props;
+  const { item, isSelected, onClick, layoutId } = props;
 
   return (
     <div className={styles.navItem} onClick={onClick}>
@@ -134,7 +184,7 @@ const NavItem: React.FC<NavItemProps> = (props: NavItemProps) => {
         <a>{item.name}</a>
       </Link>
       {isSelected && (
-        <motion.div className={styles.navUnderline} layoutId="underline" />
+        <motion.div className={styles.navUnderline} layoutId={layoutId} />
       )}
     </div>
   );

@@ -24,6 +24,7 @@ const ShopItemView: React.FC<ShopItemViewProps> = ({ itemData }) => {
               alt={`product image of ${itemData.image}`}
               layout="fill"
               objectFit="cover"
+              priority={true}
             />
           </div>
         </div>

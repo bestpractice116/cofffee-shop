@@ -41,6 +41,7 @@
     // Keep middle (social icons) centered
     flex: 1;
     flex-basis: 0;
+    z-index: 10;
 
     .logo {
       color: $primary-beige;
@@ -105,10 +106,19 @@
 }
 
 .navItem {
+  
   cursor: pointer;
   color: $primary-beige;
   font-size: 16px;
   position: relative;
+
+  @media only screen and (max-width: 992px) {
+    font-size: 18px;
+  }
+
+  @media only screen and (max-width: 576px) {
+    font-size: 14px;
+  }
 }
 
 .navUnderline {
@@ -120,6 +130,14 @@
   height: 2px;
   border-radius: 15px; 
   background: $primary-beige;
+
+  @media only screen and (max-width: 992px) {
+    width: 3px;
+    height: 100%;
+    left: -20px;
+    top: 0%;
+    margin-top: 0px;
+  }
 }
 
 .menuContainer {
@@ -130,4 +148,60 @@
     justify-content: center;
     align-items: center;
   }
+
+  .dropDownContainer {
+    position: absolute;
+    right: 0px;
+    background-color: $primary-navy;
+    border-radius: 30px;
+    height: 400px;
+    padding: 20px;
+    width: 30vw;
+    transition: all 400ms;
+
+    @media only screen and (max-width: 768px) {
+      width: 40vw;
+    }
+
+    @media only screen and (max-width: 576px) {
+      height: 350px;
+      width: 45vw;
+    }
+
+    .dropdownItemContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      transition: all 400ms;
+
+      .socialIconContainerSmall {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        cursor: pointer;
+        color: $primary-beige;
+        font-size: 24px;
+        margin-bottom: 10px;
+        transition: all 400ms;
+
+        @media only screen and (max-width: 576px) {
+          font-size: 21px;
+        }
+      }
+
+      .navRoutesContainerSmall {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+.hideElement {
+  display: none;
 }
