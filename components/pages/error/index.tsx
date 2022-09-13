@@ -1,9 +1,35 @@
 import React from "react";
+import Image from "next/image";
+import ShowOnViewport from "../../library/animations/showOnViewport";
+import SpaceWalk from "../../../public/assets/space-walk.jpeg";
+
+const styles = require("./error.module.scss");
 
 type ErrorViewProps = {};
 
 const ErrorView: React.FC<ErrorViewProps> = (props: ErrorViewProps) => {
-  return <div>not found</div>;
+  return (
+    <>
+      <div className={styles.heroImageContainer}>
+        <Image
+          src={SpaceWalk}
+          alt="Dog astronaut walking away from destroyed"
+          layout="fill"
+          objectFit="cover"
+          priority={true}
+        />
+      </div>
+      <div className={styles.pageContainer}>
+        <div className={styles.cardContainer}>
+          <h1 className={styles.titleText}>we got a problem</h1>
+          <p className={styles.subText}>
+            we couldn&apos;t find that page but we will keep looking until we
+            find it
+          </p>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default ErrorView;
