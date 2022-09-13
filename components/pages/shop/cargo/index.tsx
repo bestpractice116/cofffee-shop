@@ -75,18 +75,21 @@ const CargoView: React.FC<CargoViewProps> = (props: CargoViewProps) => {
         )}
         {currentCargo.length === 0 && (
           <ShowOnViewport customClass={styles.emptyCartPoem}>
-            <p>the emptiness of space is vast and cold,</p>
-            <p>
-              but it&apos;s nothing compared to the emptiness of a shopping cart
-            </p>
-            <p>
-              there&apos;s something so sad about a cart that&apos;s been
-              abandoned,
-            </p>
-            <p>waiting for someone to come back and fill it up again</p>
-            <Link href={"/shop"}>
-              <a className={styles.emptyCartButton}>fill the void</a>
-            </Link>
+            <>
+              <p>the emptiness of space is vast and cold,</p>
+              <p>
+                but it&apos;s nothing compared to the emptiness of a shopping
+                cart
+              </p>
+              <p>
+                there&apos;s something so sad about a cart that&apos;s been
+                abandoned,
+              </p>
+              <p>waiting for someone to come back and fill it up again</p>
+              <Link href={"/shop"}>
+                <a className={styles.emptyCartButton}>fill the void</a>
+              </Link>
+            </>
           </ShowOnViewport>
         )}
       </div>
@@ -101,23 +104,25 @@ const CargoView: React.FC<CargoViewProps> = (props: CargoViewProps) => {
               </span>
             );
           })}
-          <div className={styles.buttonContainer}>
-            <motion.button
-              className={styles.summaryButton}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 1 }}
-              onClick={() => handleClearCargo()}
-            >
-              clear cargo
-            </motion.button>
-            <motion.button
-              className={styles.summaryButton}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 1 }}
-            >
-              checkout
-            </motion.button>
-          </div>
+          {currentCargo.length !== 0 && (
+            <div className={styles.buttonContainer}>
+              <motion.button
+                className={styles.summaryButton}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 1 }}
+                onClick={() => handleClearCargo()}
+              >
+                clear cargo
+              </motion.button>
+              <motion.button
+                className={styles.summaryButton}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 1 }}
+              >
+                checkout
+              </motion.button>
+            </div>
+          )}
         </div>
       </div>
     </div>

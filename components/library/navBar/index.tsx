@@ -11,11 +11,16 @@ const styles = require("./navBar.module.scss");
 type NavBarProps = {};
 
 const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
-  // Nav Routes
+  // Handle initial position of nav underline
+  const [selected, setSelected] = useState(0);
   const { pathname } = useRouter();
-  const [selected, setSelected] = useState(
-    pathname === "/contact" ? 3 : pathname === "/shop" ? 2 : 0,
-  );
+
+  useEffect(() => {
+    const pathRoot = pathname.split("/")[1];
+    setSelected(pathRoot === "contact" ? 3 : pathRoot === "shop" ? 2 : 0);
+  }, [pathname]);
+
+  // Nav routes / socials
   const navItems = [
     { name: "menu", href: "/#menu" },
     { name: "about", href: "/#about" },
@@ -31,9 +36,8 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
     },
   ];
 
-  // Nav Smaller Screen
+  // State / Animation setting for nav dropdown on smaller screen
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const sidebar = {
     open: (height = 1000) => ({
       clipPath: "inset(0px)",
@@ -130,40 +134,42 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
       <div className={styles.menuContainer}>
         {/* TODO: add dropdown nav menu */}
         <MenuToggle isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
-        <motion.div
-          className={styles.dropDownContainer}
-          variants={sidebar}
-          animate={isMenuOpen ? "open" : "closed"}
-        >
-          <div className={styles.dropdownItemContainer}>
-            <div className={styles.socialIconContainerSmall}>
-              {socialItems.map((social, index) => {
-                return (
-                  <a
-                    key={index}
-                    className={styles.socialIcon}
-                    href={social.href}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {social.icon}
-                  </a>
-                );
-              })}
+        {isMenuOpen && (
+          <motion.div
+            className={styles.dropDownContainer}
+            variants={sidebar}
+            animate={isMenuOpen ? "open" : "closed"}
+          >
+            <div className={styles.dropdownItemContainer}>
+              <div className={styles.socialIconContainerSmall}>
+                {socialItems.map((social, index) => {
+                  return (
+                    <a
+                      key={index}
+                      className={styles.socialIcon}
+                      href={social.href}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {social.icon}
+                    </a>
+                  );
+                })}
+              </div>
+              <div className={styles.navRoutesContainerSmall}>
+                {navItems.map((item, key) => (
+                  <NavItem
+                    key={key}
+                    item={item}
+                    isSelected={selected === key}
+                    onClick={() => setSelected(key)}
+                    layoutId="vertical"
+                  />
+                ))}
+              </div>
             </div>
-            <div className={styles.navRoutesContainerSmall}>
-              {navItems.map((item, key) => (
-                <NavItem
-                  key={key}
-                  item={item}
-                  isSelected={selected === key}
-                  onClick={() => setSelected(key)}
-                  layoutId="vertical"
-                />
-              ))}
-            </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        )}
       </div>
     </nav>
   );
