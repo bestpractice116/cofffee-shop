@@ -15,7 +15,7 @@
 
   background-color: $primary-beige;
   height: 75vh;
-  width: 80vw;
+  width: 90vw;
   border-radius: 30px;
   padding: 45px;
   overflow: scroll;
@@ -281,6 +281,12 @@
     font-family: 700;
     font-size: 16px;
     color: $primary-beige;
+    transition: all 400ms;
+
+    &View {
+      @extend .cartButton;
+      background-color: $primary-navy;
+    }
 
     @media only screen and (max-width: 1200px) {
       font-size: 14px;

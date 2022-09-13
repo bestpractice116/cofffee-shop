@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import ShowOnViewport from "../../../library/animations/showOnViewport";
 import { ShopItem } from "../../../../utils/mockdb";
@@ -11,8 +12,19 @@ type ShopItemViewProps = {
 };
 
 const ShopItemView: React.FC<ShopItemViewProps> = ({ itemData }) => {
+  const [cargoAdded, setCargoAdded] = useState(false);
   const [itemSize, setItemSize] = useState(2);
   const sizeOptions = ["xs", "s", "m", "l", "xl"];
+
+  const router = useRouter();
+
+  function handleAddToCargo() {
+    const currentCargo = JSON.parse(localStorage.getItem("cargo") || "[]");
+    const newItem = { item: itemData, size: sizeOptions[itemSize] };
+    currentCargo.push(newItem);
+    localStorage.setItem("cargo", JSON.stringify(currentCargo));
+    setCargoAdded(true);
+  }
 
   return (
     <div className={styles.pageContainer}>
@@ -59,14 +71,23 @@ const ShopItemView: React.FC<ShopItemViewProps> = ({ itemData }) => {
             </div>
           </div>
           <motion.button
-            className={styles.cartButton}
+            className={cargoAdded ? styles.cartButtonView : styles.cartButton}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 1 }}
+            onClick={() =>
+              !cargoAdded ? handleAddToCargo() : router.push("/shop/cargo")
+            }
           >
-            <span className={styles.itemPriceSmall}>
-              ${itemData.price} -&nbsp;
-            </span>
-            add to cargo
+            {cargoAdded ? (
+              "view cargo"
+            ) : (
+              <>
+                <span className={styles.itemPriceSmall}>
+                  ${itemData.price} -&nbsp;
+                </span>{" "}
+                add to cargo
+              </>
+            )}
           </motion.button>
         </div>
       </div>
