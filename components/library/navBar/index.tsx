@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/router";
 import Link from "next/link";
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -13,12 +12,23 @@ type NavBarProps = {};
 const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
   // Handle initial position of nav underline
   const [selected, setSelected] = useState(0);
-  const { pathname } = useRouter();
 
   useEffect(() => {
-    const pathRoot = pathname.split("/")[1];
-    setSelected(pathRoot === "contact" ? 3 : pathRoot === "shop" ? 2 : 0);
-  }, [pathname]);
+    const pathRoot = window.location.href.split("/")[3];
+    switch (pathRoot) {
+      case "contact":
+        setSelected(3);
+        break;
+      case "shop":
+        setSelected(2);
+        break;
+      case "#about":
+        setSelected(1);
+        break;
+      default:
+        setSelected(0);
+    }
+  }, []);
 
   // Nav routes / socials
   const navItems = [
@@ -63,19 +73,14 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
   useEffect(() => {
     const handleScroll = debounce(() => {
       const currentScrollPos = window.scrollY;
-      const scrollBuffer = 50;
+      const scrollBuffer = 20;
       const scrollMinDisplay = 5;
 
-      if (
-        // Show Nav / Close dropdown if scroll up distance is larger than scroll buffer
-        (prevScrollPos > currentScrollPos &&
-          prevScrollPos - currentScrollPos > scrollBuffer) ||
-        // or within minDisplay range from the top of the page
-        currentScrollPos < scrollMinDisplay
-      ) {
-        setShowNav(true);
-        setIsMenuOpen(false);
-      }
+      const scrollUpIsPastBuffer =
+        prevScrollPos > currentScrollPos &&
+        prevScrollPos - currentScrollPos > scrollBuffer;
+
+      setShowNav(scrollUpIsPastBuffer || currentScrollPos < scrollMinDisplay);
 
       setScrollAtTop(currentScrollPos <= scrollBuffer);
       setPrevScrollPos(currentScrollPos);
@@ -134,42 +139,40 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
       <div className={styles.menuContainer}>
         {/* TODO: add dropdown nav menu */}
         <MenuToggle isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
-        {isMenuOpen && (
-          <motion.div
-            className={styles.dropDownContainer}
-            variants={sidebar}
-            animate={isMenuOpen ? "open" : "closed"}
-          >
-            <div className={styles.dropdownItemContainer}>
-              <div className={styles.socialIconContainerSmall}>
-                {socialItems.map((social, index) => {
-                  return (
-                    <a
-                      key={index}
-                      className={styles.socialIcon}
-                      href={social.href}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {social.icon}
-                    </a>
-                  );
-                })}
-              </div>
-              <div className={styles.navRoutesContainerSmall}>
-                {navItems.map((item, key) => (
-                  <NavItem
-                    key={key}
-                    item={item}
-                    isSelected={selected === key}
-                    onClick={() => setSelected(key)}
-                    layoutId="vertical"
-                  />
-                ))}
-              </div>
+        <motion.div
+          className={isMenuOpen ? styles.dropDownContainer : styles.hideElement}
+          variants={sidebar}
+          animate={isMenuOpen ? "open" : "closed"}
+        >
+          <div className={styles.dropdownItemContainer}>
+            <div className={styles.socialIconContainerSmall}>
+              {socialItems.map((social, index) => {
+                return (
+                  <a
+                    key={index}
+                    className={styles.socialIcon}
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {social.icon}
+                  </a>
+                );
+              })}
             </div>
-          </motion.div>
-        )}
+            <div className={styles.navRoutesContainerSmall}>
+              {navItems.map((item, key) => (
+                <NavItem
+                  key={key}
+                  item={item}
+                  isSelected={selected === key}
+                  onClick={() => setSelected(key)}
+                  layoutId="vertical"
+                />
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </div>
     </nav>
   );
