@@ -11,13 +11,17 @@ type ShopViewProps = {};
 const ShopView: React.FC<ShopViewProps> = (props: ShopViewProps) => {
   return (
     <div className={styles.pageContainer}>
-      <ShowOnViewport customClass={styles.shopInventoryContainer}>
+      <div className={styles.shopInventoryContainer}>
         <>
           {shopItems.map((product, index) => {
-            return <Item key={index} {...product} />;
+            return (
+              <ShowOnViewport key={index} delay={index / 5}>
+                <Item {...product} />
+              </ShowOnViewport>
+            );
           })}
         </>
-      </ShowOnViewport>
+      </div>
     </div>
   );
 };

@@ -38,7 +38,7 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
     open: (height = 1000) => ({
       clipPath: "inset(0px)",
       transition: {
-        delay: 0.2,
+        delay: 0.1,
         ease: [0.2, 0.65, 0.3, 0.9],
       },
     }),
@@ -62,13 +62,17 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
       const scrollBuffer = 50;
       const scrollMinDisplay = 5;
 
-      setShowNav(
-        // Show Nav if scroll up distance is larger than scroll buffer
+      if (
+        // Show Nav / Close dropdown if scroll up distance is larger than scroll buffer
         (prevScrollPos > currentScrollPos &&
           prevScrollPos - currentScrollPos > scrollBuffer) ||
-          // or within minDisplay range from the top of the page
-          currentScrollPos < scrollMinDisplay,
-      );
+        // or within minDisplay range from the top of the page
+        currentScrollPos < scrollMinDisplay
+      ) {
+        setShowNav(true);
+        setIsMenuOpen(false);
+      }
+
       setScrollAtTop(currentScrollPos <= scrollBuffer);
       setPrevScrollPos(currentScrollPos);
     }, 100);

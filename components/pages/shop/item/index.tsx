@@ -66,7 +66,7 @@ const ShopItemView: React.FC<ShopItemViewProps> = ({ itemData }) => {
             <span className={styles.itemPriceSmall}>
               ${itemData.price} -&nbsp;
             </span>
-            add to cart
+            add to cargo
           </motion.button>
         </div>
       </div>
