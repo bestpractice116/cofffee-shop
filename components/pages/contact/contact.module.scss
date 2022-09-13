@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 100vh;
 }
 
 .contactCardContainer {
@@ -30,7 +30,6 @@
 
     @media only screen and (max-width: 991px) {
       width: 80%;
-      
     }
     
    .cardTitleText {
@@ -42,6 +41,10 @@
       @media only screen and (max-width: 991px) {
         font-size: 32px;
         text-align: center;
+      }
+
+      @media only screen and (max-width: 720px) {
+        font-size: 26px;
       }
     }
 
@@ -66,6 +69,10 @@
     @media only screen and (max-width: 991px) {
       margin-top: 25px;
       width: 66%;
+    }
+
+    @media only screen and (max-width: 720px) {
+      width: 90%;
     }
 
     .contactButton {
