@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import Link from "next/link";
+
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
@@ -13,14 +15,17 @@ type ShopItemViewProps = {
 
 const ShopItemView: React.FC<ShopItemViewProps> = ({ itemData }) => {
   const [cargoAdded, setCargoAdded] = useState(false);
-  const [itemSize, setItemSize] = useState(2);
-  const sizeOptions = ["xs", "s", "m", "l", "xl"];
+  const [itemSize, setItemSize] = useState(0);
+  const sizeOptions = itemData.sizes;
 
   const router = useRouter();
 
   function handleAddToCargo() {
     const currentCargo = JSON.parse(localStorage.getItem("cargo") || "[]");
-    const newItem = { item: itemData, size: sizeOptions[itemSize] };
+    const newItem = {
+      item: itemData,
+      size: sizeOptions ? sizeOptions[itemSize] : "",
+    };
     currentCargo.push(newItem);
     localStorage.setItem("cargo", JSON.stringify(currentCargo));
     setCargoAdded(true);
@@ -48,28 +53,31 @@ const ShopItemView: React.FC<ShopItemViewProps> = ({ itemData }) => {
               <p className={styles.itemDescription}>{itemData.description}</p>
             </>
           </ShowOnViewport>
-          <div className={styles.sizingContainer}>
-            <span className={styles.sizeText}>select a size</span>
-            <div className={styles.sizeOptionsContainer}>
-              {sizeOptions.map((size, index) => {
-                return (
-                  <div
-                    key={index}
-                    className={
-                      itemSize === index
-                        ? styles.sizeOptionSelected
-                        : styles.sizeOption
-                    }
-                    onClick={() => {
-                      setItemSize(index);
-                    }}
-                  >
-                    {size}
-                  </div>
-                );
-              })}
+          {sizeOptions && !cargoAdded && (
+            <div className={styles.sizingContainer}>
+              <span className={styles.sizeText}>select a size</span>
+              <div className={styles.sizeOptionsContainer}>
+                {sizeOptions.map((size, index) => {
+                  return (
+                    <div
+                      key={index}
+                      className={
+                        itemSize === index
+                          ? styles.sizeOptionSelected
+                          : styles.sizeOption
+                      }
+                      onClick={() => {
+                        setItemSize(index);
+                      }}
+                    >
+                      {size}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-          </div>
+          )}
+
           <motion.button
             className={cargoAdded ? styles.cartButtonView : styles.cartButton}
             whileHover={{ scale: 1.05 }}
@@ -89,6 +97,11 @@ const ShopItemView: React.FC<ShopItemViewProps> = ({ itemData }) => {
               </>
             )}
           </motion.button>
+          {cargoAdded && (
+            <Link href="/shop">
+              <a className={styles.cartButton}>keep shopping</a>
+            </Link>
+          )}
         </div>
       </div>
     </div>

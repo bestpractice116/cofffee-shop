@@ -1,6 +1,12 @@
+import { StaticImageData } from "next/image";
+
 import WhiteHelmet from "../public/assets/white-helmet.jpeg";
 import BlackHelmet from "../public/assets/black-helmet.jpeg";
-import { StaticImageData } from "next/image";
+import RocketBeans from "../public/assets/rocket-beans.jpeg";
+import SpaceCups from "../public/assets/space-cups.jpeg";
+import Machine from "../public/assets/machine.jpeg";
+import OtherMachine from "../public/assets/other-machine.jpeg";
+import Cap from "../public/assets/cap.jpeg";
 
 export type ShopItem = {
   id: number;
@@ -8,43 +14,62 @@ export type ShopItem = {
   price: number;
   name: string;
   description: string;
+  sizes?: string[];
 };
 
 const shopItems = [
   {
     id: 1,
-    image: WhiteHelmet,
-    price: 200,
-    name: "cofffee head #001",
-    description: "kind of like sunglasses but for your entire face",
+    image: Cap,
+    price: 50,
+    name: "cap",
+    description: "affix on top head",
+    sizes: ["s", "m", "l"],
   },
+
   {
     id: 2,
-    image: BlackHelmet,
-    price: 200,
-    name: "cofffee head #001",
-    description: "kind of like sunglasses but for your entire face",
+    image: RocketBeans,
+    price: 35,
+    name: "rocket beans",
+    description: "find your boost",
   },
   {
     id: 3,
-    image: WhiteHelmet,
-    price: 200,
-    name: "cofffee head #001",
-    description: "kind of like sunglasses but for your entire face",
+    image: SpaceCups,
+    price: 80,
+    name: "space cups",
+    description: "really just a sippy cup when you think about it",
   },
   {
     id: 4,
-    image: BlackHelmet,
-    price: 200,
-    name: "cofffee head #001",
-    description: "kind of like sunglasses but for your entire face",
+    image: Machine,
+    price: 599,
+    name: "the machine",
+    description: "do you really need us anymore",
   },
   {
     id: 5,
+    image: OtherMachine,
+    price: 799,
+    name: "the other machine",
+    description: "calling it a smart machine would be an insult",
+  },
+  {
+    id: 6,
     image: WhiteHelmet,
     price: 200,
     name: "cofffee head #001",
     description: "kind of like sunglasses but for your entire face",
+    sizes: ["xs", "s", "m", "l", "xl"],
+  },
+  {
+    id: 7,
+    image: BlackHelmet,
+    price: 250,
+    name: "cofffee head #002",
+    description: "everything looks better in matte black",
+    sizes: ["xs", "s", "m", "l", "xl"],
   },
 ];
 

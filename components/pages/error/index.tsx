@@ -23,8 +23,7 @@ const ErrorView: React.FC<ErrorViewProps> = (props: ErrorViewProps) => {
         <div className={styles.cardContainer}>
           <h1 className={styles.titleText}>we got a problem</h1>
           <p className={styles.subText}>
-            we couldn&apos;t find that page but we will keep looking until we
-            find it
+            we couldn&apos;t find that page but we will keep looking
           </p>
         </div>
       </div>

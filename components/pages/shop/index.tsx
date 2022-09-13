@@ -15,7 +15,7 @@ const ShopView: React.FC<ShopViewProps> = (props: ShopViewProps) => {
         <>
           {shopItems.map((product, index) => {
             return (
-              <ShowOnViewport key={index} delay={index / 5}>
+              <ShowOnViewport key={index} delay={index / 10}>
                 <Item {...product} />
               </ShowOnViewport>
             );

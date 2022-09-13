@@ -96,6 +96,7 @@
 
     .itemDataContainer {
       display: block;
+      width: 80%;
 
       @media only screen and (max-width: 576px) {
         display: flex;
@@ -224,7 +225,6 @@
 
         @media only screen and (max-width: 400px) {
           width: 100%;
-          justify-content: space-between;
         }
         
         .sizeOption {

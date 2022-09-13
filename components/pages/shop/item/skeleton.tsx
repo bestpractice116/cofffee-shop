@@ -10,7 +10,7 @@ type ShopItemSkeletonProps = {};
 const ShopItemSkeleton: React.FC<ShopItemSkeletonProps> = (
   props: ShopItemSkeletonProps,
 ) => {
-  const sizeOptions = ["xs", "s", "m", "l", "xl"];
+  const sizeOptions = ["s", "m", "l"];
   return (
     <SkeletonTheme baseColor="#8D9481" highlightColor="#F0E7D8">
       <div className={styles.pageContainer}>

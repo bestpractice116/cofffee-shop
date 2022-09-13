@@ -61,10 +61,12 @@ const CargoView: React.FC<CargoViewProps> = (props: CargoViewProps) => {
                     </div>
                     <div className={styles.detailsContainer}>
                       <span className={styles.itemText}>{cargo.item.name}</span>
-                      <span className={styles.itemText}>
-                        <span className={styles.guideText}>size:&nbsp;</span>
-                        {cargo.size}
-                      </span>
+                      {cargo.size && (
+                        <span className={styles.itemText}>
+                          <span className={styles.guideText}>size:&nbsp;</span>
+                          {cargo.size}
+                        </span>
+                      )}
                     </div>
                     <span className={styles.itemText}>${cargo.item.price}</span>
                   </>
