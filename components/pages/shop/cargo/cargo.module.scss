@@ -132,14 +132,13 @@
     justify-content: center;
     gap: 0;
     color: $primary-grey;
-    text-align: justify;
     font-weight: 400;
     margin: 0px;
     padding: 0px;
     letter-spacing: -0.03em;
     font-size: 14px;
     height: 100%;
-    width: 40%;
+    width: 50%;
 
     @media only screen and (max-width: 576px) {
       font-size: 12px;

@@ -68,7 +68,9 @@ const CargoView: React.FC<CargoViewProps> = (props: CargoViewProps) => {
                         </span>
                       )}
                     </div>
-                    <span className={styles.itemText}>${cargo.item.price}</span>
+                    <span className={styles.itemPrice}>
+                      ${cargo.item.price}
+                    </span>
                   </>
                 </ShowOnViewport>
               );
