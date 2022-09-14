@@ -21,7 +21,8 @@ const Layout: React.FC<LayoutProps> = ({ children, pageMeta }) => {
     description: "coffee first, questions later",
     type: "website",
     image: Hero.src,
-    twitterImage: "https://i.ibb.co/6Y9Wgb4/cofffee-hero.jpg",
+    twitterImage:
+      "https://cofffee-shop.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcofffee-hero.794201de.jpg&w=750&q=75",
     imageAlt:
       "A coffee shop floating in space along with other coffee related debris",
     url: `https://cofffee-shop.vercel.app${router.asPath}`,
@@ -43,8 +44,9 @@ const Layout: React.FC<LayoutProps> = ({ children, pageMeta }) => {
         <meta name="twitter:image:alt" content={meta.imageAlt} />
         <meta name="twitter:title" content={meta.title} />
         <meta property="twitter:description" content={meta.description} />
+        <meta property="twitter:site" content="@augericke" />
         <meta property="twitter:creator" content="@augericke" />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.layoutContainer}>
