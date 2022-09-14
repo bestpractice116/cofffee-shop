@@ -7,7 +7,7 @@ import ShopItemView from "../../../components/pages/shop/item";
 import ShopItemSkeleton from "../../../components/pages/shop/item/skeleton";
 import ErrorView from "../../../components/pages/error";
 
-import Hero from "../../../public/assets/cofffee-hero.jpeg";
+import Hero from "../../../public/assets/cofffee-hero.jpg";
 import { ShopItem, shopItems } from "../../../utils/mockdb";
 
 const ShopPage: NextPage = () => {

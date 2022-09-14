@@ -3,9 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import Menu from "../../library/menu";
 
-import HeroImage from "../../../public/assets/cofffee-hero.jpeg";
-import CoffeeCupsImage from "../../../public/assets/cofffee-cups.jpeg";
-import ShopImage from "../../../public/assets/astro-shop.jpeg";
+import HeroImage from "../../../public/assets/cofffee-hero.jpg";
+import CoffeeCupsImage from "../../../public/assets/cofffee-cups.jpg";
+import ShopImage from "../../../public/assets/astro-shop.jpg";
 
 const styles = require("./landing.module.scss");
 

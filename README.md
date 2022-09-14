@@ -1,6 +1,6 @@
 ## Welcome to the COFFFEE Shop
 
-<img src="./public/assets/cofffee-hero.jpeg" width="700">
+<img src="./public/assets/cofffee-hero.jpg" width="700">
 
 ## About
 
@@ -14,9 +14,9 @@ You can checkout the final hosted product at: https://cofffee-shop.vercel.app/
 
 I make all my Figma mocks publicly available for those who are curious about my design process or just want to tinker with the layout in their own way. For the COFFFEE Shop those mocks can be seen [here](https://www.figma.com/file/FjfhOf31XhGdNPmoGRsmX9/COFFFEE-SHOP?node-id=0%3A3). Additionally, all assets on the site are available in the [assets folder](./public/assets/) of this repo.
 
-|                Coffee Cups Floating In Space                |              Coffee Beans With A Rocket Logo               |
-| :---------------------------------------------------------: | :--------------------------------------------------------: |
-| !<img src="./public/assets/cofffee-cups.jpeg" height="300"> | <img src="./public/assets/rocket-beans.jpeg" height="300"> |
+|               Coffee Cups Floating In Space                |              Coffee Beans With A Rocket Logo              |
+| :--------------------------------------------------------: | :-------------------------------------------------------: |
+| !<img src="./public/assets/cofffee-cups.jpg" height="300"> | <img src="./public/assets/rocket-beans.jpg" height="300"> |
 
 ## Running Locally
 

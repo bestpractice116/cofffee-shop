@@ -1,13 +1,13 @@
 import { StaticImageData } from "next/image";
 
 // Static images but if stored in an actual db would host and only keep a reference to an images url
-import WhiteHelmet from "../public/assets/white-helmet.jpeg";
-import BlackHelmet from "../public/assets/black-helmet.jpeg";
-import RocketBeans from "../public/assets/rocket-beans.jpeg";
-import SpaceCups from "../public/assets/space-cups.jpeg";
-import Machine from "../public/assets/machine.jpeg";
-import OtherMachine from "../public/assets/other-machine.jpeg";
-import Cap from "../public/assets/cap.jpeg";
+import WhiteHelmet from "../public/assets/white-helmet.jpg";
+import BlackHelmet from "../public/assets/black-helmet.jpg";
+import RocketBeans from "../public/assets/rocket-beans.jpg";
+import SpaceCups from "../public/assets/space-cups.jpg";
+import Machine from "../public/assets/machine.jpg";
+import OtherMachine from "../public/assets/other-machine.jpg";
+import Cap from "../public/assets/cap.jpg";
 
 export type ShopItem = {
   id: number;

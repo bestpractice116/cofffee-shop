@@ -3,7 +3,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import NavBar from "../library/navBar";
 import Footer from "../library/footer";
-import Hero from "../../public/assets/cofffee-hero.jpeg";
+import Hero from "../../public/assets/cofffee-hero.jpg";
 
 const styles = require("./layout.module.scss");
 
