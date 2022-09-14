@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import CargoView from "../../../components/pages/shop/cargo";
-import Hero from "../../public/assets/cofffee-hero.jpeg";
+import Hero from "../../../public/assets/cofffee-hero.jpeg";
 
 const CargoPage: NextPage = () => {
   return (
