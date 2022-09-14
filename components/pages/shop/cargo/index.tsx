@@ -2,13 +2,21 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ShowOnViewport from "../../../library/animations/showOnViewport";
+import Modal from "../../../library/modal";
 import { motion } from "framer-motion";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaExternalLinkSquareAlt,
+} from "react-icons/fa";
 
 const styles = require("./cargo.module.scss");
 
 type CargoViewProps = {};
 
 const CargoView: React.FC<CargoViewProps> = (props: CargoViewProps) => {
+  const [showModal, setShowModal] = useState(true);
   const [currentCargo, setCurrentCargo] = useState([]);
   const [amountOwed, setAmountOwed] = useState(0);
 
@@ -21,6 +29,19 @@ const CargoView: React.FC<CargoViewProps> = (props: CargoViewProps) => {
     {
       category: "total",
       value: (amountOwed + taxAmount + shippingAmount).toFixed(2),
+    },
+  ];
+
+  const socialItems = [
+    { icon: <FaTwitter />, href: "https://twitter.com/augericke" },
+    { icon: <FaGithub />, href: "https://github.com/Augericke/" },
+    {
+      icon: <FaLinkedin />,
+      href: "https://www.linkedin.com/in/austingericke/",
+    },
+    {
+      icon: <FaExternalLinkSquareAlt />,
+      href: "https://www.austingericke.com/",
     },
   ];
 
@@ -122,6 +143,7 @@ const CargoView: React.FC<CargoViewProps> = (props: CargoViewProps) => {
                 className={styles.summaryButton}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 1 }}
+                onClick={() => setShowModal(true)}
               >
                 checkout
               </motion.button>
@@ -129,6 +151,49 @@ const CargoView: React.FC<CargoViewProps> = (props: CargoViewProps) => {
           )}
         </div>
       </div>
+      <Modal
+        isVisible={showModal}
+        onClose={() => setShowModal(false)}
+        content={
+          <div className={styles.modalContentContainer}>
+            <h2 className={styles.modalTitle}>I&apos;m flattered but...</h2>
+            <p className={styles.modalBody}>
+              This isn&apos;t a real coffee shop *gasp*. This website was a
+              weekend project to learn more about Next.js and explore how
+              OpenAi&apos;s image and text generation tools could be used in the
+              design process.
+            </p>
+            <p className={styles.modalBody}>
+              All of the images and text you have seen on the the site were
+              generated purely using the AI tools available on{" "}
+              <a className={styles.link} href={"https://openai.com/dall-e-2/"}>
+                OpenAI&apos;s
+              </a>{" "}
+              platform. There were no alterations or edits made after the fact.
+            </p>
+            <p className={styles.modalBody}>
+              If you enjoyed the site or want to give any suggestions on how to
+              improve I would love to hear about it. You can reach me on any of
+              the social platforms below:
+            </p>
+            <div className={styles.socialIconsContainer}>
+              {socialItems.map((social, index) => {
+                return (
+                  <a
+                    key={index}
+                    className={styles.socialIcon}
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {social.icon}
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        }
+      />
     </div>
   );
 };
