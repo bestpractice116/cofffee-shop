@@ -56,7 +56,7 @@ const CargoView: React.FC<CargoViewProps> = (props: CargoViewProps) => {
                     <div className={styles.imageContainer}>
                       <Image
                         src={cargo.item.image}
-                        alt={`product image of ${cargo.item.name}`}
+                        alt={`product image of: ${cargo.item.name}`}
                       />
                     </div>
                     <div className={styles.detailsContainer}>
