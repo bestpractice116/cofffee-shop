@@ -22,6 +22,7 @@ const ShopPage: NextPage = () => {
       const isInvalidItemId =
         !id || typeof id !== "string" || isNaN(parseInt(id));
 
+      // Show 404 if item id is invalid otherwise display loading + item view
       setComponent(
         isInvalidItemId ? (
           <ErrorView />
@@ -38,7 +39,7 @@ const ShopPage: NextPage = () => {
         const data = shopItems.find((item) => item.id === parseInt(id));
         setItemData(data);
 
-        // Added a delay just to showcase the loading skelton
+        // Added a delay just to showcase the loading skelton (but would and should remove if intended for actual use)
         if (data) {
           setInterval(function () {
             setIsLoading(false);

@@ -9,12 +9,13 @@ const styles = require("./layout.module.scss");
 
 type LayoutProps = {
   children: React.ReactElement;
-  pageMeta?: any;
+  pageMeta?: {};
 };
 
 const Layout: React.FC<LayoutProps> = ({ children, pageMeta }) => {
   const router = useRouter();
 
+  // Default meta tags if not otherwise set via the pageMeta prop
   const meta = {
     title: "COFFFEE SHOP",
     description: "coffee first, questions later",

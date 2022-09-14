@@ -1,5 +1,6 @@
 import { StaticImageData } from "next/image";
 
+// Static images but if stored in an actual db would host and only keep a reference to an images url
 import WhiteHelmet from "../public/assets/white-helmet.jpeg";
 import BlackHelmet from "../public/assets/black-helmet.jpeg";
 import RocketBeans from "../public/assets/rocket-beans.jpeg";

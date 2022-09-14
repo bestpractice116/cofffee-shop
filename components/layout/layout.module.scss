@@ -2,8 +2,6 @@
 
 // Fix footer to the bottom of the page
 .layoutContainer {
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
 
   .contentContainer {

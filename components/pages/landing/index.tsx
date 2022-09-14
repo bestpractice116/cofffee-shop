@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import Menu from "../../library/menu";
 
-// Images
 import HeroImage from "../../../public/assets/cofffee-hero.jpeg";
 import CoffeeCupsImage from "../../../public/assets/cofffee-cups.jpeg";
 import ShopImage from "../../../public/assets/astro-shop.jpeg";

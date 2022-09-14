@@ -10,6 +10,22 @@ const styles = require("./navBar.module.scss");
 type NavBarProps = {};
 
 const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
+  // Nav routes / socials
+  const navItems = [
+    { name: "menu", href: "/#menu" },
+    { name: "about", href: "/#about" },
+    { name: "shop", href: "/shop" },
+    { name: "contact", href: "/contact" },
+  ];
+  const socialItems = [
+    { icon: <FaTwitter />, href: "https://twitter.com/augericke" },
+    { icon: <FaGithub />, href: "https://github.com/Augericke/cofffee-shop" },
+    {
+      icon: <FaLinkedin />,
+      href: "https://www.linkedin.com/in/austingericke/",
+    },
+  ];
+
   // Handle initial position of nav underline
   const [selected, setSelected] = useState(0);
 
@@ -30,32 +46,16 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
     }
   }, []);
 
-  // Nav routes / socials
-  const navItems = [
-    { name: "menu", href: "/#menu" },
-    { name: "about", href: "/#about" },
-    { name: "shop", href: "/shop" },
-    { name: "contact", href: "/contact" },
-  ];
-  const socialItems = [
-    { icon: <FaTwitter />, href: "https://twitter.com/augericke" },
-    { icon: <FaGithub />, href: "https://github.com/Augericke/cofffee-shop" },
-    {
-      icon: <FaLinkedin />,
-      href: "https://www.linkedin.com/in/austingericke/",
-    },
-  ];
-
   // State / Animation setting for nav dropdown on smaller screen
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const sidebar = {
-    open: (height = 1000) => ({
+    open: {
       clipPath: "inset(0px)",
       transition: {
         delay: 0.1,
         ease: [0.2, 0.65, 0.3, 0.9],
       },
-    }),
+    },
     closed: {
       clipPath: `inset(0px 0px 500px 0px)`,
       transition: {
@@ -65,7 +65,7 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
     },
   };
 
-  // State to hide nav on scroll down and show on scroll up
+  // Hide nav on scroll down and show on scroll up
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [scrollAtTop, setScrollAtTop] = useState(true);
   const [showNav, setShowNav] = useState(true);
@@ -80,9 +80,10 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
         prevScrollPos > currentScrollPos &&
         prevScrollPos - currentScrollPos > scrollBuffer;
 
-      setShowNav(scrollUpIsPastBuffer || currentScrollPos < scrollMinDisplay);
+      const scrollIsAtTop = currentScrollPos <= scrollMinDisplay;
 
-      setScrollAtTop(currentScrollPos <= scrollBuffer);
+      setShowNav(scrollUpIsPastBuffer || scrollIsAtTop);
+      setScrollAtTop(scrollIsAtTop);
       setPrevScrollPos(currentScrollPos);
     }, 100);
 
@@ -137,7 +138,6 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
       </div>
       {/* Viewable on smaller browsers */}
       <div className={styles.menuContainer}>
-        {/* TODO: add dropdown nav menu */}
         <MenuToggle isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
         <motion.div
           className={isMenuOpen ? styles.dropDownContainer : styles.hideElement}

@@ -2,7 +2,6 @@ import React from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 const styles = require("./item.module.scss");
-const skeletonStyles = require("./skeleton.module.scss");
 import "react-loading-skeleton/dist/skeleton.css";
 
 type ShopItemSkeletonProps = {};

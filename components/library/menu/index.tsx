@@ -19,7 +19,7 @@ const Menu: React.FC<MenuProps> = (props: MenuProps) => {
               <div className={styles.categoryContainer}>
                 <h3
                   className={
-                    // Color alternating (based on overflow format) rows
+                    // Color alternating rows (based on overflow format)
                     index % 3 === 0
                       ? styles.categoryTitleGreen
                       : styles.categoryTitle

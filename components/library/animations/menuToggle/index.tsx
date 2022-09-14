@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+// initial approach taken from https://codesandbox.io/s/framer-motion-side-menu-mx2rw?from-embed
+
+import React from "react";
 import { motion } from "framer-motion";
 
 const styles = require("./menuToggle.module.scss");
