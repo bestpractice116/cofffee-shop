@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import ShowOnViewport from "../../library/animations/showOnViewport";
 import SpaceWalk from "../../../public/assets/space-walk.jpeg";
 
 const styles = require("./error.module.scss");

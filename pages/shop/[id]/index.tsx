@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import type { NextPage } from "next";
-import Head from "next/head";
 import { useRouter } from "next/router";
 
+import Layout from "../../../components/layout";
 import ShopItemView from "../../../components/pages/shop/item";
 import ShopItemSkeleton from "../../../components/pages/shop/item/skeleton";
 import ErrorView from "../../../components/pages/error";
-import Hero from "../../../public/assets/cofffee-hero.jpeg";
 
+import Hero from "../../../public/assets/cofffee-hero.jpeg";
 import { ShopItem, shopItems } from "../../../utils/mockdb";
 
 const ShopPage: NextPage = () => {
@@ -51,50 +51,19 @@ const ShopPage: NextPage = () => {
   }, [router.query, router.isReady, isLoading, itemData]);
 
   return (
-    <>
-      <Head>
-        <title>
-          {itemData
-            ? `COFFFEE | ${itemData.name.toUpperCase()}`
-            : "COFFFEE | Shop"}
-        </title>
-        <meta
-          name="description"
-          content={
-            itemData
-              ? itemData.description
-              : "The best gear that COFFFEE has to offer"
-          }
-        />
-        <meta
-          property="og:title"
-          content={
-            itemData
-              ? `COFFFEE | ${itemData.name.toUpperCase()}`
-              : "COFFFEE | Shop"
-          }
-        />
-        <meta
-          property="og:image"
-          content={itemData ? itemData.image.src : Hero.src}
-        />
-        <meta
-          property="og:description"
-          content={
-            itemData
-              ? itemData.description
-              : "The best gear that COFFFEE has to offer"
-          }
-        />
-        <meta
-          property="og:url"
-          content={`https://cofffee-shop.vercel.app/${router.asPath}`}
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Layout
+      pageMeta={{
+        title: `COFFFEE | ${itemData ? itemData.name.toUpperCase() : "Shop"}`,
+        description: `${
+          itemData
+            ? itemData.description
+            : "The best gear this COFFFEE shop has to offer"
+        }`,
+        image: itemData ? itemData.image.src : Hero.src,
+      }}
+    >
       {component}
-    </>
+    </Layout>
   );
 };
 
