@@ -38,4 +38,4 @@ Check out their [documentation](https://nextjs.org/docs/deployment) if you are i
 
 ## Feedback
 
-Any and all feedback is welcome - you can either create a PR for this repo or connect with me over twitter [@augericke](https://twitter.com/augericke). I really appreciate those who stop by to take a look at the things I make and even more so those who try and help me improve - so truly thank you in advance!
+Any and all feedback is welcome - you can either create a PR for this repo or connect with me over twitter [@augericke](https://twitter.com/augericke). I really appreciate those who stop by to take a look at the things I make and even more so those who try to help me improve - so truly thank you in advance!
