@@ -9,6 +9,7 @@ const ErrorPage: React.FC = () => {
       pageMeta={{
         title: "Page Not Found",
         image: SpaceWalk.src,
+        imageAlt: "A dog astronaut floating in space",
       }}
     >
       <ErrorView />

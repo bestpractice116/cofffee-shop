@@ -61,6 +61,9 @@ const ShopPage: NextPage = () => {
             : "The best gear this COFFFEE shop has to offer"
         }`,
         image: itemData ? itemData.image.src : Hero.src,
+        imageAlt: itemData
+          ? itemData.description
+          : "A coffee shop floating in space along with other coffee related debris",
       }}
     >
       {component}
