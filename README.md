@@ -35,3 +35,7 @@ Open http://localhost:3000 with your browser to see the result.
 This app was was deployed on the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme). Deploying on vercel is the easiest way to deploy a Next.js app.
 
 Check out their [documentation](https://nextjs.org/docs/deployment) if you are interested in more details.
+
+## Feedback
+
+Any and all feedback is welcome - you can either create a PR for this repo or connect with me over twitter [@augericke](https://twitter.com/augericke). I really appreciate those who stop by to take a look at the things I make and even more so those who try and help me improve - so truly thank you in advance!
