@@ -42,6 +42,7 @@ const ShopItemView: React.FC<ShopItemViewProps> = ({ itemData }) => {
               layout="fill"
               objectFit="cover"
               priority={true}
+              placeholder="blur"
             />
           </div>
         </div>

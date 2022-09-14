@@ -38,9 +38,10 @@ const Item: React.FC<ShopItem> = (props: ShopItem) => {
           <span className={styles.imageColorOverlay} />
           <Image
             src={image}
-            alt="Coffee cups and beans floating in space"
+            alt={`product image of: ${name}`}
             layout="fill"
             objectFit="cover"
+            placeholder="blur"
           />
         </div>
         <div className={styles.textContainer}>

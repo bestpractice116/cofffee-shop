@@ -16,6 +16,7 @@ const ErrorView: React.FC<ErrorViewProps> = (props: ErrorViewProps) => {
           alt="Dog astronaut walking away from destroyed"
           layout="fill"
           objectFit="cover"
+          placeholder="blur"
           priority={true}
         />
       </div>

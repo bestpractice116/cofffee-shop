@@ -21,6 +21,7 @@ const LandingView: React.FC<LandingViewProps> = (props: LandingViewProps) => {
           alt="Coffee shop floating in space"
           layout="fill"
           objectFit="cover"
+          placeholder="blur"
           priority={true}
         />
       </div>
@@ -34,6 +35,7 @@ const LandingView: React.FC<LandingViewProps> = (props: LandingViewProps) => {
               alt="Coffee cups and beans floating in space"
               layout="fill"
               objectFit="cover"
+              placeholder="blur"
             />
             <h1 className={styles.aboutTitleText}>ABOUT</h1>
           </div>
@@ -79,6 +81,7 @@ const LandingView: React.FC<LandingViewProps> = (props: LandingViewProps) => {
               alt="Astronaut drinking coffee and working at a laptop"
               layout="fill"
               objectFit="cover"
+              placeholder="blur"
             />
             <h1 className={styles.shopTitleText}>SHOP</h1>
           </div>
