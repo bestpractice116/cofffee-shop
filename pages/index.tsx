@@ -15,7 +15,7 @@ const Home: NextPage = () => {
           property="og:description"
           content="coffee first, questions later"
         />
-        <meta property="og:url" content="http://localhost:3000" />
+        <meta property="og:url" content="https://cofffee-shop.vercel.app/" />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

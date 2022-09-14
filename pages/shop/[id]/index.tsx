@@ -88,7 +88,7 @@ const ShopPage: NextPage = () => {
         />
         <meta
           property="og:url"
-          content={`http://localhost:3000/${router.asPath}`}
+          content={`https://cofffee-shop.vercel.app/${router.asPath}`}
         />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.ico" />
