@@ -16,7 +16,7 @@ const styles = require("./cargo.module.scss");
 type CargoViewProps = {};
 
 const CargoView: React.FC<CargoViewProps> = (props: CargoViewProps) => {
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const [currentCargo, setCurrentCargo] = useState([]);
   const [amountOwed, setAmountOwed] = useState(0);
 
