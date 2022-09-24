@@ -1,4 +1,4 @@
-@import '../../../styles/colors.scss';
+@import "../../../styles/colors.scss";
 
 .menuContainer {
   display: flex;
@@ -51,7 +51,7 @@
       margin: 0;
 
       transition: all 400ms;
-      
+
       @media only screen and (max-width: 992px) {
         font-size: 38px;
       }
@@ -79,6 +79,14 @@
     height: 90%;
     width: 100%;
     overflow: scroll;
+
+    // Hide Scroll Bar
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
     transition: all 400ms;
 
     @media only screen and (max-width: 576px) {
@@ -162,7 +170,7 @@
           }
         }
 
-        .itemDescription{
+        .itemDescription {
           color: $primary-grey;
           font-size: 12px;
           width: 85%;
